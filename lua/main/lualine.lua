@@ -46,7 +46,7 @@ local fileformat = {
 local filename = {
     "filename",
     file_status = true,      -- Displays file status (readonly status, modified status)
-    newfile_status = false,   -- Display new file status (new file means no write after created)
+    newfile_status = false,  -- Display new file status (new file means no write after created)
     path = 0,                -- 0: Just the filename
                            -- 1: Relative path
                            -- 2: Absolute path
@@ -60,6 +60,15 @@ local filename = {
         unnamed = '[No Name]', -- Text to show for unnamed buffers.
         newfile = '[New]',     -- Text to show for new created file before first writting
     }
+}
+
+local filetype = {
+    "filetype",
+    colored = true,
+    icon_only = true,
+    icon = { align = 'right' }, -- Display filetype icon on the right hand side
+    -- icon =    {'X', align='right'}
+    -- Icon string ^ in table is ignored in filetype component
 }
 
 local mode = {
@@ -127,5 +136,6 @@ lualine.setup({
 		lualine_z = {},
 	},
 	tabline = {},
+    winbar = {},
 	extensions = {},
 })
