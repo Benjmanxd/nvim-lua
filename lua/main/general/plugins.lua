@@ -10,10 +10,10 @@ end
 
 -- Autocommand that reloads neovim whenever you save plugins.lua
 vim.cmd [[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost plugins.lua source <afile> | PackerSync
-    augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerSync
+augroup end
 ]]
 
 -- Use a protected call so won't error out on first use
@@ -33,7 +33,7 @@ packer.init {
 
 -- Install plugins
 return packer.startup(function(use)
--- Put all plugins under this line
+    -- Put all plugins under this line
     -- packer
     use "wbthomason/packer.nvim"
     -- colourscheme, ui
@@ -42,6 +42,8 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "mortepau/codicons.nvim"
+    use "kyazdani42/nvim-web-devicons"
+    use "nvim-lualine/lualine.nvim"
     use { "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end }
     -- completetion, snippet
     use "hrsh7th/nvim-cmp"
@@ -62,7 +64,7 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope-file-browser.nvim"
 
 
--- Automcatically setup configuration after cloning packer.nvim, put this after all plugins
+    -- Automcatically setup configuration after cloning packer.nvim, put this after all plugins
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
