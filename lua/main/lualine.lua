@@ -11,17 +11,55 @@ local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
+    diagnostics_color = {
+        error = "DiagnosticError",
+        warm = "DiagnosticWarn",
+    },
 	symbols = { error = " ", warn = " " },
-	colored = false,
+	colored = true,
 	update_in_insert = false,
-	always_visible = true,
+	always_visible = false,
 }
 
 local diff = {
 	"diff",
-	colored = false,
+    diff_color = {
+        added = "DiffAdd",
+        modified = "DiffChange",
+        removed = "DiffDelete",
+    },
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+	colored = true,
+    always_visible = false,
+    cond = hide_in_width,
+}
+
+local fileformat = {
+    "fileformat",
+    symbols = {
+        unix = '', -- e712
+        dos = '',  -- e70f
+        mac = '',  -- e711
+    },
+}
+
+local filename = {
+    "filename",
+    file_status = true,      -- Displays file status (readonly status, modified status)
+    newfile_status = false,   -- Display new file status (new file means no write after created)
+    path = 0,                -- 0: Just the filename
+                           -- 1: Relative path
+                           -- 2: Absolute path
+                           -- 3: Absolute path, with tilde as the home directory
+
+    shorting_target = 40,    -- Shortens path to leave 40 spaces in the window
+                           -- for other components. (terrible name, any suggestions?)
+    symbols = {
+        modified = '[+]',      -- Text to show when the file is modified.
+        readonly = '[-]',      -- Text to show when the file is non-modifiable or readonly.
+        unnamed = '[No Name]', -- Text to show for unnamed buffers.
+        newfile = '[New]',     -- Text to show for new created file before first writting
+    }
 }
 
 local mode = {

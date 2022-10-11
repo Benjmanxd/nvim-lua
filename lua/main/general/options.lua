@@ -9,6 +9,7 @@ o.writebackup = false
 o.ruler = true
 o.number = true
 o.relativenumber = true
+o.showmode = false
 o.mouse = "a"
 o.wrap = false
 o.background = "dark"
