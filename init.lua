@@ -1,0 +1,8 @@
+require "main.general.options"
+require "main.general.keymaps"
+require "main.general.plugins"
+require "main.dashboard"
+require "main.cmp"
+require "main.lsp"
+require "main.telescope"
+--require "main.color"
