@@ -29,7 +29,7 @@ local diff = {
         removed = "DiffDelete",
     },
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-	colored = true,
+	colored = false,
     always_visible = false,
     cond = hide_in_width,
 }
@@ -47,7 +47,7 @@ local filename = {
     "filename",
     file_status = true,      -- Displays file status (readonly status, modified status)
     newfile_status = false,  -- Display new file status (new file means no write after created)
-    path = 0,                -- 0: Just the filename
+    path = 3,                -- 0: Just the filename
                            -- 1: Relative path
                            -- 2: Absolute path
                            -- 3: Absolute path, with tilde as the home directory
@@ -67,6 +67,7 @@ local filetype = {
     colored = true,
     icon_only = true,
     icon = { align = 'right' }, -- Display filetype icon on the right hand side
+	icons_enabled = false,
     -- icon =    {'X', align='right'}
     -- Icon string ^ in table is ignored in filetype component
 }
@@ -76,12 +77,6 @@ local mode = {
 	fmt = function(str)
 		return "-- " .. str .. " --"
 	end,
-}
-
-local filetype = {
-	"filetype",
-	icons_enabled = false,
-	icon = nil,
 }
 
 local branch = {
@@ -112,7 +107,10 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		--theme = "auto",
+        --theme = "seoul256",
+        --theme = "onedark",
+        theme = "palenight",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
@@ -130,7 +128,7 @@ lualine.setup({
 	inactive_sections = {
 		lualine_a = {},
 		lualine_b = {},
-		lualine_c = { "filename" },
+		lualine_c = { filename },
 		lualine_x = { "location" },
 		lualine_y = {},
 		lualine_z = {},
