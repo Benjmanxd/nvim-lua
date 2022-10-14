@@ -1,6 +1,7 @@
 require "main.general.options"
 require "main.general.keymaps"
 require "main.general.plugins"
+require "main.general.commands"
 require "main.dashboard"
 require "main.cmp"
 require "main.lsp"

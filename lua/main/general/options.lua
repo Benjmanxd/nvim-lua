@@ -37,7 +37,3 @@ o.completeopt = { "menu", "menuone", "noselect" }
 o.shortmess:append "c"
 o.backupdir = home .. "/.nvim/backups"
 o.undodir = home .. "/.nvim/undos"
-
--- vim command
-vim.cmd "colorscheme neodark" --colourscheme
-vim.cmd "language en_US.utf8" --ui language
