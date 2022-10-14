@@ -44,6 +44,7 @@ return packer.startup(function(use)
     use "mortepau/codicons.nvim"
     use "kyazdani42/nvim-web-devicons"
     use "nvim-lualine/lualine.nvim"
+    use "arkav/lualine-lsp-progress"
     use { "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end }
     -- completetion, snippet
     use "hrsh7th/nvim-cmp"

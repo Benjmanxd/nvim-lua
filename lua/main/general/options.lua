@@ -37,3 +37,4 @@ o.completeopt = { "menu", "menuone", "noselect" }
 o.shortmess:append "c"
 o.backupdir = home .. "/.nvim/backups"
 o.undodir = home .. "/.nvim/undos"
+
