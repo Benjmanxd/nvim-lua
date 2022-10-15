@@ -19,7 +19,7 @@ table.insert(vimgrep_arguments, "--hidden")
 table.insert(vimgrep_arguments, "--glob")
 table.insert(vimgrep_arguments, "!.git/*")
 
-telescope.setup {
+local config = {
     defaults = {
         -- :help telescope.layout
         vimgrep_arguments = vimgrep_arguments,
@@ -70,6 +70,8 @@ telescope.setup {
         },
     },
 }
+
+telescope.setup(config)
 
 telescope.load_extension "file_browser"
 

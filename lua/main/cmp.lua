@@ -87,8 +87,7 @@ local cmp_kinds = {
 }
 --]]
 
-
-cmp.setup {
+local config = {
     view = {                                                        
         entries = { name = 'custom', selection_order = 'near_cursor' },
     },  
@@ -188,6 +187,8 @@ cmp.setup {
         native_menu = false,
     },
 }
+
+cmp.setup(config)
 
 --[[
 vim command - :highlight Pmenu ctermbg=gray guibg=gray
