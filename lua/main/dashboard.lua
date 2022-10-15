@@ -1,6 +1,6 @@
 local home = os.getenv('HOME')
-local db_status_ok, db = pcall(require, "dashboard")
-if not db_status_ok then
+local status_ok, db = pcall(require, "dashboard")
+if not status_ok then
     return
 end
 -- macos

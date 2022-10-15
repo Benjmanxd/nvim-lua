@@ -1,17 +1,13 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
+local status_ok, cmp, luasnip, lspkind
+status_ok, cmp = pcall(require, "cmp")
+if not status_ok then
     return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
+status_ok, luasnip = pcall(require, "luasnip")
+if not status_ok then
     return
 end
-
---local colorbuddy_status_ok, colorbuddy = pcall(require, "colorbuddy")
---if not colorbuddy_status_ok then
---    return
---end
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -142,8 +138,8 @@ local config = {
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-            local lspkind_status_ok, lspkind = pcall(require, "lspkind")
-            if not lspkind_status_ok then
+            status_ok, lspkind = pcall(require, "lspkind")
+            if not status_ok then
                 -- Kind icons
                 vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
                 -- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind

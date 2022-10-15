@@ -1,12 +1,12 @@
-local telescope_status_ok, telescope = pcall(require, "telescope")
-if not telescope_status_ok then
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
     return
 end
 
 local builtin = require("telescope.builtin")
 local actions = require("telescope.actions")
-local config = require("telescope.config")
-local vimgrep_arguments = { unpack(config.values.vimgrep_arguments) }
+local global_config = require("telescope.config")
+local vimgrep_arguments = { unpack(global_config.values.vimgrep_arguments) }
 
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fx", builtin.find_files, {})
