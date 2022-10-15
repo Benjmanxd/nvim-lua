@@ -43,9 +43,6 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim"
     use "mortepau/codicons.nvim"
     use "kyazdani42/nvim-web-devicons"
-    use "nvim-lualine/lualine.nvim"
-    use "arkav/lualine-lsp-progress"
-    use "akinsho/bufferline.nvim"
     use { "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end }
     -- completetion, snippet
     use "hrsh7th/nvim-cmp"
@@ -64,6 +61,11 @@ return packer.startup(function(use)
     -- file, fuzzy
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-file-browser.nvim"
+    -- buffer, status
+    use "nvim-lualine/lualine.nvim"
+    use "arkav/lualine-lsp-progress"
+    use "akinsho/bufferline.nvim"
+    use "kazhala/close-buffers.nvim"
 
 
     -- Automcatically setup configuration after cloning packer.nvim, put this after all plugins
