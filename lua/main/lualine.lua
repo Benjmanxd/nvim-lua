@@ -31,7 +31,7 @@ local diagnostics = {
         warm = "DiagnosticWarn",
     },
 	symbols = { error = " ", warn = " " },
-	colored = true,
+	colored = false,
 	update_in_insert = false,
 	always_visible = false,
 }
@@ -167,8 +167,8 @@ local config = {
 	},
 	sections = {
 		lualine_a = { mode },
-		lualine_b = { branch, diagnostics },
-		lualine_c = { lsp },
+		lualine_b = { branch },
+		lualine_c = { lsp, diagnostics },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		-- lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_x = { diff },
