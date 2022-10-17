@@ -66,6 +66,8 @@ return packer.startup(function(use)
     use "arkav/lualine-lsp-progress"
     use "akinsho/bufferline.nvim"
     use "kazhala/close-buffers.nvim"
+    -- git
+    use "tpope/vim-fugitive"
 
 
     -- Automcatically setup configuration after cloning packer.nvim, put this after all plugins
