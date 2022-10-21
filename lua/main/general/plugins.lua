@@ -68,6 +68,7 @@ return packer.startup(function(use)
     use "kazhala/close-buffers.nvim"
     -- git
     use "tpope/vim-fugitive"
+    use "kdheepak/lazygit.nvim"
 
 
     -- Automcatically setup configuration after cloning packer.nvim, put this after all plugins

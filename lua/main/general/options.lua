@@ -1,6 +1,6 @@
 -- vim option
-o = vim.opt
-home = vim.fn.expand('~')
+local o = vim.opt
+local home = vim.fn.expand('~')
 
 o.backup = false
 o.swapfile = false
