@@ -61,6 +61,7 @@ return packer.startup(function(use)
     -- file, fuzzy
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-file-browser.nvim"
+    use "kevinhwang91/rnvimr"
     -- buffer, status
     use "nvim-lualine/lualine.nvim"
     use "arkav/lualine-lsp-progress"
