@@ -11,6 +11,8 @@ g.loaded_netrwPlugin = 1
 
 local config = {
     sort_by = "case_sensitive",
+    disable_netrw = true,
+    hijack_netrw = true,
     view = {
         adaptive_size = true,
         mappings = {
