@@ -62,6 +62,7 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-file-browser.nvim"
     use "kevinhwang91/rnvimr"
+    use "nvim-tree/nvim-tree.lua"
     -- buffer, status
     use "nvim-lualine/lualine.nvim"
     use "arkav/lualine-lsp-progress"
