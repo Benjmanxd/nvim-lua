@@ -67,6 +67,7 @@ return packer.startup(function(use)
     use "arkav/lualine-lsp-progress"
     use "akinsho/bufferline.nvim"
     use "kazhala/close-buffers.nvim"
+    use "akinsho/toggleterm.nvim"
     -- git
     use "tpope/vim-fugitive"
     use "kdheepak/lazygit.nvim"
