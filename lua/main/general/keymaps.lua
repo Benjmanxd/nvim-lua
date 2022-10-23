@@ -21,22 +21,22 @@ vim.g.maplocalleader = " "
 -- Normal mode
 -- explorer
 --keymap("n", "<leader>x", ":Lex 30<CR>", opts)
+-- buffer navigation
+keymap("n", "<C-b>n", "<CMD>bnext<CR>", opts)
+keymap("n", "<C-b>m", "<CMD>bprevious<CR>", opts)
 -- window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 -- window resize
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Up>", "<CMD>resize +2<CR>", opts)
+keymap("n", "<C-Down>", "<CMD>resize -2<CR>", opts)
+keymap("n", "<C-Right>", "<CMD>vertical resize +2<CR>", opts)
+keymap("n", "<C-Left>", "<CMD>vertical resize -2<CR>", opts)
 -- cursor navigation
 --keymap("n", "W", "$", opts)
 --keymap("n", "B", "^", opts)
--- buffer navigation
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- move line up and down
 keymap("n", "<C-S-j>", ":m .+1<CR>==", opts)
 keymap("n", "<C-S-k>", ":m .-2<CR>==", opts)
