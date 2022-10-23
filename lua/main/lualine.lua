@@ -206,3 +206,12 @@ local function ins_right(component)
 end
 
 lualine.setup(config)
+
+--  terminal = {
+--    a = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+--    b = { fg = colors.yellow, bg = colors.menu_grey },
+--  },
+--  command = {
+--    a = { fg = colors.black, bg = colors.dark_yellow, gui = 'bold' },
+--    b = { fg = colors.dark_yellow, bg = colors.menu_grey },
+--  },
