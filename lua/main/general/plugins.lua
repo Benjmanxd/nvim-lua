@@ -63,6 +63,8 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope-file-browser.nvim"
     use "kevinhwang91/rnvimr"
     use "nvim-tree/nvim-tree.lua"
+    -- code editting
+    use "windwp/nvim-autopairs"
     -- buffer, status
     use "nvim-lualine/lualine.nvim"
     use "arkav/lualine-lsp-progress"
