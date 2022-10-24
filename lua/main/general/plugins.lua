@@ -65,11 +65,6 @@ return packer.startup(function(use)
     }
     use "nvim-telescope/telescope-file-browser.nvim"
     use "kevinhwang91/rnvimr" -- ranger
-    use { -- nvim-tree
-        'nvim-tree/nvim-tree.lua',
-        requires = { 'nvim-tree/nvim-web-devicons', },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    }
     use { -- neo-tree
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
