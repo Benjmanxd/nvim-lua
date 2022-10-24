@@ -1,3 +1,5 @@
+vim.keymap.set("n", "<leader>gg", "<CMD>LazyGit<CR>", { noremap = true })
+
 local g = vim.g
 
 g.lazygit_floating_window_winblend = 70

@@ -59,21 +59,35 @@ return packer.startup(function(use)
     use "neovim/nvim-lspconfig"
     use "williamboman/nvim-lsp-installer"
     -- file, fuzzy
-    use "nvim-telescope/telescope.nvim"
+    use { -- telescope
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        requires = { 'nvim-lua/plenary.nvim', }
+    }
     use "nvim-telescope/telescope-file-browser.nvim"
-    use "kevinhwang91/rnvimr"
-    use "nvim-tree/nvim-tree.lua"
+    use "kevinhwang91/rnvimr" -- ranger
+    use { -- nvim-tree
+        'nvim-tree/nvim-tree.lua',
+        requires = { 'nvim-tree/nvim-web-devicons', },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
+    use { -- neo-tree
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
+        requires = { "nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons", "MunifTanjim/nui.nvim", }
+    }
     -- code editting
-    use "windwp/nvim-autopairs"
+    use "windwp/nvim-autopairs" -- autopairs
     -- buffer, status
-    use "nvim-lualine/lualine.nvim"
-    use "arkav/lualine-lsp-progress"
-    use "akinsho/bufferline.nvim"
+    use { -- lualine
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    use "akinsho/bufferline.nvim" -- bufferline
     use "kazhala/close-buffers.nvim"
-    use "akinsho/toggleterm.nvim"
+    use "akinsho/toggleterm.nvim" -- toggleterm
     -- git
-    use "tpope/vim-fugitive"
-    use "kdheepak/lazygit.nvim"
+    use "tpope/vim-fugitive" -- fugitive
+    use "kdheepak/lazygit.nvim" -- lazygit
 
 
     -- Automcatically setup configuration after cloning packer.nvim, put this after all plugins
