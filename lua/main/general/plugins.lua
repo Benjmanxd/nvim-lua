@@ -73,6 +73,7 @@ return packer.startup(function(use)
     -- code editting
     use "windwp/nvim-autopairs" -- autopairs
     use "nvim-treesitter/nvim-treesitter"
+    use "stevearc/aerial.nvim"
     -- buffer, status
     use { -- lualine
         'nvim-lualine/lualine.nvim',

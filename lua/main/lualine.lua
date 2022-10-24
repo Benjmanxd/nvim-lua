@@ -161,7 +161,7 @@ local config = {
 		--section_separators = { left = "", right = "" },
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", "neo-tree" },
+		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", "neo-tree", "aerial" },
 		always_divide_middle = true,
         padding = { left = 2, right = 2, },
 	},
