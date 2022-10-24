@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-vim.keymap.set("n", "<leader>tt", "<CMD>NvimTreeToggle<CR>", {})
+--vim.keymap.set("n", "<leader>tt", "<CMD>NvimTreeToggle<CR>", {})
 
 local g = vim.g
 g.loaded_netrw = 1
