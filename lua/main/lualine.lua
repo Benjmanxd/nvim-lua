@@ -30,7 +30,7 @@ local diagnostics = {
         error = "DiagnosticError",
         warm = "DiagnosticWarn",
     },
-	symbols = { error = " ", warn = " " },
+	symbols = { error = utils.get_icon("DiagnosticError"), warn = utils.get_icon("DiagnosticWarn") },
 	colored = false,
 	update_in_insert = false,
 	always_visible = false,
@@ -43,7 +43,7 @@ local diff = {
         modified = "DiffChange",
         removed = "DiffDelete",
     },
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+	symbols = { added = utils.get_icon("GitAddReversed"), modified = utils.get_icon("GitModifiedReversed"), removed = utils.get_icon("GitDeleteReversed") }, -- changes diff symbols
 	colored = false,
     always_visible = false,
     cond = hide_in_width,
@@ -52,9 +52,9 @@ local diff = {
 local fileformat = {
     "fileformat",
     symbols = {
-        unix = '', -- e712
-        dos = '',  -- e70f
-        mac = '',  -- e711
+        unix = utils.get_icon("OSUnix"), -- e712
+        dos = utils.get_icon("OSWin"),  -- e70f
+        mac = utils.get_icon("OSMac"),  -- e711
     },
 }
 
@@ -146,7 +146,7 @@ local lsp = {
         end
         return msg
     end,
-    icon = ' LSP:',
+    icon = utils.get_icon("LSPServer") .. ' LSP:',
     --color = { fg = '#ffffff', gui = 'bold' },
 }
 
@@ -159,8 +159,8 @@ local config = {
         theme = "palenight",
 		--component_separators = { left = "", right = "" },
 		--section_separators = { left = "", right = "" },
-        component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        component_separators = { left = utils.get_icon("LualineComponentSeparatorLeft"), right = utils.get_icon("LualineComponentSeparatorRight") },
+        section_separators = { left = utils.get_icon("LualineSectionSeparatorLeft"), right = utils.get_icon("LualineSectionSeparatorRight") },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", "neo-tree", "aerial" },
 		always_divide_middle = true,
         padding = { left = 2, right = 2, },
