@@ -105,7 +105,7 @@ local config = {
         },
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
-        ["<CR>"] = cmp.mapping.confirm { select = true },
+        ["<CR>"] = cmp.mapping.confirm { select = false },
         ["<Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     cmp.select_next_item()
@@ -231,4 +231,3 @@ vim command - :highlight Pmenu ctermbg=gray guibg=gray
     CmpItemKindTypeParameter = { fg = "#D8EEEB", bg = "#58B5A8" },
 }
 --]]
-
