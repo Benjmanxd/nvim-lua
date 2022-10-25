@@ -73,6 +73,7 @@ return packer.startup(function(use)
     -- code editting
     use "windwp/nvim-autopairs" -- autopairs
     use "nvim-treesitter/nvim-treesitter"
+    use "Yggdroot/indentLine" -- identLine
     use "stevearc/aerial.nvim"
     -- buffer, status
     use { -- lualine
@@ -85,7 +86,6 @@ return packer.startup(function(use)
     -- git
     use "tpope/vim-fugitive" -- fugitive
     use "kdheepak/lazygit.nvim" -- lazygit
-
 
     -- Automcatically setup configuration after cloning packer.nvim, put this after all plugins
     if PACKER_BOOTSTRAP then
