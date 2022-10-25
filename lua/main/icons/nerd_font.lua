@@ -19,6 +19,8 @@ return {
     FolderClosed = "",
     FolderEmpty = "",
     FolderOpen = "",
+    FolderCollapsed = "",
+    FolderExpanded = "",
     Git = "",
     GitAdd = "",
     GitBranch = "",

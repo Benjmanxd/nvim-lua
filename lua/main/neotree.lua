@@ -11,13 +11,13 @@ vim.keymap.set("n", "<leader>tg", "<CMD>Neotree git_status toggle<CR>", { norema
 
 -- If you want icons for diagnostic errors, you'll need to define them somewhere:
 vim.fn.sign_define("DiagnosticSignError",
-{text = " ", texthl = "DiagnosticSignError"})
+{text = utils.get_icon("DiagnosticError"), texthl = "DiagnosticSignError"})
 vim.fn.sign_define("DiagnosticSignWarn",
-{text = " ", texthl = "DiagnosticSignWarn"})
+{text = utils.get_icon("DiagnosticWarn"), texthl = "DiagnosticSignWarn"})
 vim.fn.sign_define("DiagnosticSignInfo",
-{text = " ", texthl = "DiagnosticSignInfo"})
+{text = utils.get_icon("DiagnosticInfo"), texthl = "DiagnosticSignInfo"})
 vim.fn.sign_define("DiagnosticSignHint",
-{text = "", texthl = "DiagnosticSignHint"})
+{text = utils.get_icon("DiagnosticHint"), texthl = "DiagnosticSignHint"})
 
 local config = {
     close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
@@ -37,10 +37,10 @@ local config = {
         winbar = false,
         content_layout = "center",
         tab_labels = {
-            filesystem = utils.get_icon "FolderClosed" .. " File",
-            buffers = utils.get_icon "DefaultFile" .. " Bufs",
-            git_status = utils.get_icon "Git" .. " Git",
-            diagnostics = utils.get_icon "Diagnostic" .. " Diagnostic",
+            filesystem = utils.get_icon("FolderClosed") .. " File",
+            buffers = utils.get_icon("DefaultFile") .. " Bufs",
+            git_status = utils.get_icon("Git") .. " Git",
+            diagnostics = utils.get_icon("Diagnostic") .. " Diagnostic",
         },
     },
     default_component_configs = {
@@ -57,19 +57,19 @@ local config = {
             highlight = "NeoTreeIndentMarker",
             -- expander config, needed for nesting files
             with_expanders = nil, -- if nil and file nesting is enabled, will enable expanders
-            expander_collapsed = "",
-            expander_expanded = "",
+            expander_collapsed = utils.get_icon("FolderCollapsed"),
+            expander_expanded = utils.get_icon("FolderExpanded"),
             expander_highlight = "NeoTreeExpander",
         },
         icon = {
-            folder_closed = utils.get_icon "FolderClosed",
-            folder_open = utils.get_icon "FolderOpen",
-            folder_empty = utils.get_icon "FolderEmpty",
-            default = utils.get_icon "DefaultFile",
+            folder_closed = utils.get_icon("FolderClosed"),
+            folder_open = utils.get_icon("FolderOpen"),
+            folder_empty = utils.get_icon("FolderEmpty"),
+            default = utils.get_icon("DefaultFile"),
             highlight = "NeoTreeFileIcon"
         },
         modified = {
-            symbol = "[+]",
+            symbol = utils.get_icon("FileModified"),
             highlight = "NeoTreeModified",
         },
         name = {
@@ -79,15 +79,15 @@ local config = {
         },
         git_status = {
             symbols = {
-                added = utils.get_icon "GitAdd",
-                deleted = utils.get_icon "GitDelete",
-                modified = utils.get_icon "GitChange",
-                renamed = utils.get_icon "GitRenamed",
-                untracked = utils.get_icon "GitUntracked",
-                ignored = utils.get_icon "GitIgnored",
-                unstaged = utils.get_icon "GitUnstaged",
-                staged = utils.get_icon "GitStaged",
-                conflict = utils.get_icon "GitConflict",
+                added = utils.get_icon("GitAdd"),
+                deleted = utils.get_icon("GitDelete"),
+                modified = utils.get_icon("GitChange"),
+                renamed = utils.get_icon("GitRenamed"),
+                untracked = utils.get_icon("GitUntracked"),
+                ignored = utils.get_icon("GitIgnored"),
+                unstaged = utils.get_icon("GitUnstaged"),
+                staged = utils.get_icon("GitStaged"),
+                conflict = utils.get_icon("GitConflict"),
             },
         },
     },
