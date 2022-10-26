@@ -43,7 +43,7 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim"
     use "mortepau/codicons.nvim"
     use "kyazdani42/nvim-web-devicons"
-    use "iamcco/markdown-preview.nvim"
+    use "MunifTanjim/nui.nvim"
     -- completetion, snippet
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"
@@ -59,33 +59,25 @@ return packer.startup(function(use)
     use "neovim/nvim-lspconfig"
     use "williamboman/nvim-lsp-installer"
     -- file, fuzzy
-    use { -- telescope
-        'nvim-telescope/telescope.nvim', branch = '0.1.x',
-        requires = { 'nvim-lua/plenary.nvim', }
-    }
+    use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', } -- telescope
     use "nvim-telescope/telescope-file-browser.nvim"
     use "kevinhwang91/rnvimr" -- ranger
-    use { -- neo-tree
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
-        requires = { "nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons", "MunifTanjim/nui.nvim", }
-    }
+    use { "nvim-neo-tree/neo-tree.nvim", branch = "v2.x", } -- neotree
     -- code editting
     use "windwp/nvim-autopairs" -- autopairs
     use "nvim-treesitter/nvim-treesitter"
     use "Yggdroot/indentLine" -- identLine
     use "stevearc/aerial.nvim"
     -- buffer, status
-    use { -- lualine
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
+    use "nvim-lualine/lualine.nvim" -- lualine
     use "akinsho/bufferline.nvim" -- bufferline
     use "kazhala/close-buffers.nvim"
     use "akinsho/toggleterm.nvim" -- toggleterm
     -- git
     use "tpope/vim-fugitive" -- fugitive
     use "kdheepak/lazygit.nvim" -- lazygit
+    -- language
+    use "iamcco/markdown-preview.nvim"
 
     -- Automcatically setup configuration after cloning packer.nvim, put this after all plugins
     if PACKER_BOOTSTRAP then
