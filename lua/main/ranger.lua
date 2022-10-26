@@ -62,11 +62,11 @@ g.rnvimr_action = {
 }
 
 --Add views for Ranger to adapt the size of floating window
---g.rnvimr_ranger_views = {
---            {'minwidth': 90, 'ratio': []},
---            {'minwidth': 50, 'maxwidth': 89, 'ratio': [1,1]},
---            {'maxwidth': 49, 'ratio': [1]},
---        }
+g.rnvimr_ranger_views = {
+    { ['minwidth'] = 90, ['ratio'] = {} },
+    { ['minwidth'] = 50, ['maxwidth'] = 89, ['ratio'] = {1,1} },
+    { ['maxwidth'] = 49, ['ratio'] = {1} },
+}
 
 --Customize the initial layout
 --g.rnvimr_layout = {
