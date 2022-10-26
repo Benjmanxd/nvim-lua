@@ -38,7 +38,7 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim"
     -- colourscheme, ui
     use "KeitaNakamura/neodark.vim"
-    use "glepnir/dashboard-nvim"
+    use "goolord/alpha-nvim"
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "mortepau/codicons.nvim"
