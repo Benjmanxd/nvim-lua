@@ -6,7 +6,7 @@ g.rnvimr_enable_ex = 1
 g.rnvimr_enable_picker = 1
 
 --Replace `$EDITOR` candidate with this command to open the selected file
-g.rnvimr_edit_cmd = 'drop'
+g.rnvimr_edit_cmd = 'vsplit'
 
 --Disable a border for floating window
 g.rnvimr_draw_border = 1
@@ -16,12 +16,12 @@ g.rnvimr_hide_gitignore = 0
 
 --Change the border's color
 g.rnvimr_border_attr = {
-                ["fg"] = 14,
-                ["bg"] = -1,
-            }
+    ["fg"] = 14,
+    ["bg"] = -1,
+}
 
 --Make Neovim wipe the buffers corresponding to the files deleted by Ranger
-g.rnvimr_enable_bw = 1
+g.rnvimr_enable_bw = 0
 
 --Add a shadow window, value is equal to 100 will disable shadow
 g.rnvimr_shadow_winblend = 40
@@ -54,12 +54,12 @@ vim.keymap.set("t", "<leader>rs", "<CMD>RnvimrResize 1,8,9,11,5<CR>", { noremap 
 
 --Map Rnvimr action
 g.rnvimr_action = {
-            ["<C-t>"] = "NvimEdit tabedit",
-            ["<C-x>"] = "NvimEdit split",
-            ["<C-v>"] = "NvimEdit vsplit",
-            ["gw"] = "JumpNvimCwd",
-            ["yw"] = "EmitRangerCwd",
-        }
+    ["<C-t>"] = "NvimEdit tabedit",
+    ["<C-x>"] = "NvimEdit split",
+    ["<C-v>"] = "NvimEdit vsplit",
+    ["gw"] = "JumpNvimCwd",
+    ["yw"] = "EmitRangerCwd",
+}
 
 --Add views for Ranger to adapt the size of floating window
 --g.rnvimr_ranger_views = {
