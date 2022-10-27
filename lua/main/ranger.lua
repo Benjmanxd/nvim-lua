@@ -5,9 +5,6 @@ g.rnvimr_enable_ex = 1
 --Make Ranger to be hidden after picking a file
 g.rnvimr_enable_picker = 1
 
---Replace `$EDITOR` candidate with this command to open the selected file
-g.rnvimr_edit_cmd = 'vsplit'
-
 --Disable a border for floating window
 g.rnvimr_draw_border = 1
 
@@ -46,8 +43,8 @@ vim.keymap.set("t", "<leader>rr", "<CMD>RnvimrToggle<CR>", { noremap = true })
 --tnoremap <silent> <M-i> <C-\><C-n>:RnvimrResize<CR>
 
 --Resize floating window by special preset layouts
-vim.keymap.set("t", "<leader>rs", "<CMD>RnvimrResize 1,8,9,11,5<CR>", { noremap = true })
---tnoremap <silent> <M-l> <C-\><C-n>:RnvimrResize 1,8,9,11,5<CR>
+vim.keymap.set("t", "<leader>rs", "<CMD>RnvimrResize 3<CR>", { noremap = true })
+--vim.keymap.set("t", "<leader>rs", "<CMD>RnvimrResize 1,8,9,11,5<CR>", { noremap = true })
 
 --Resize floating window by single preset layout
 --tnoremap <silent> <M-y> <C-\><C-n>:RnvimrResize 6<CR>
@@ -103,7 +100,12 @@ g.rnvimr_ranger_views = {
 --            ["col"] = 0,
 --            ["row"] = 0,
 --            ["style"] = "minimal",
---        }
-
+--}
+--
 --Only use initial preset layout
---g.rnvimr_presets = [{}]
+--g.rnvimr_presets = {
+--    {},
+--    { ["width"] = 0.700, ["height"] = 0.700 },
+--    { ["width"] = 0.800, ["height"] = 0.800 },
+--    { ["width"] = 0.950, ["height"] = 0.950 },
+--}
