@@ -1,4 +1,4 @@
-local status_ok, aeriel = pcall(require, "aerial")
+local status_ok, aerial = pcall(require, "aerial")
 if not status_ok then
     return
 end
@@ -164,4 +164,4 @@ local config = {
     },
 }
 
-aeriel.setup(config)
+aerial.setup(config)
