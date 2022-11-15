@@ -68,6 +68,7 @@ return packer.startup(function(use)
     use "nvim-treesitter/nvim-treesitter"
     use "Yggdroot/indentLine" -- identLine
     use "stevearc/aerial.nvim"
+    use "dag/vim-fish"
     -- buffer, status
     use "nvim-lualine/lualine.nvim" -- lualine
     use "akinsho/bufferline.nvim" -- bufferline
