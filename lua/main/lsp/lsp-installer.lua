@@ -1,32 +1,42 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
-if not status_ok then
+local mason_status_ok, mason = pcall(require, "mason")
+if not mason_status_ok then
     return
 end
 
-local handler = require("main.lsp.handlers")
-lsp_installer.on_server_ready(function (server)
-    local opts = {
-        on_attach = handler.on_attach,
-        capabilities = handler.capabilities,
+local mason_lspconfig_status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not mason_lspconfig_status_ok then
+    return
+end
+
+mason.setup()
+
+local servers = {
+    lua_ls = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    },
+    clangd = {},
+    tsserver = {},
+    bashls = {},
+    cssls = {},
+    dockerls = {},
+    html = {},
+    jsonls = {},
+    pyright = {},
+    rust_analyzer = {},
+    gopls = {},
+}
+local mason_lspconfig_config = {
+    ensure_installed = vim.tbl_keys(servers),
+}
+mason_lspconfig.setup(mason_lspconfig_config)
+mason_lspconfig.setup_handlers {
+  function(server_name)
+    require('lspconfig')[server_name].setup {
+      settings = servers[server_name],
     }
-
-    if server.name == "sumneko_lua" then
-        local lua_opts = require("main.lsp.settings.sumneko_lua")
-        opts = vim.tbl_deep_extend("force", lua_opts, opts)
-    end
-
-    if server.name == "jsonls" then
-        local json_opts = require("main.lsp.settings.jsonls")
-        opts = vim.tbl_deep_extend("force", json_opts, opts)
-    end
-
---[[
-    if server.name == "clangd" then
-        local clang_opts = require("main.lsp.settings.clangd")
-        opts = vim.tbl_deep_extend("force", clang_opts, opts)
-    end
---]]
-
-    server:setup(opts)
-end)
-
+  end,
+}

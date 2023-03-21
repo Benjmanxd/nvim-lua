@@ -57,7 +57,8 @@ return packer.startup(function(use)
     use "rafamadriz/friendly-snippets"
     -- lsp
     use "neovim/nvim-lspconfig"
-    use "williamboman/nvim-lsp-installer"
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
     -- file, fuzzy
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', } -- telescope
     use "nvim-telescope/telescope-file-browser.nvim"
