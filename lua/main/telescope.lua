@@ -3,17 +3,26 @@ if not status_ok then
     return
 end
 
+pcall(telescope.load_extension, 'lazygit')
+pcall(telescope.load_extension, 'file_browser')
+pcall(telescope.load_extension, 'fzf')
+
 local builtin = require("telescope.builtin")
 local actions = require("telescope.actions")
 local global_config = require("telescope.config")
 local vimgrep_arguments = { unpack(global_config.values.vimgrep_arguments) }
 
-vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-vim.keymap.set("n", "<leader>fx", builtin.find_files, {})
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
+vim.keymap.set("n", "<leader>st", builtin.help_tags, { desc = "[S]earch [H]elp" })
+vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
+vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]ianostics" })
+vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [B]uffers" })
+vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "[/] Fuzzily search in current buffer" })
+vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
 vim.keymap.set("n", "<leader>x",  "<CMD>Telescope file_browser<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, { desc = "[D]ocument [S]ymbols" })
+vim.keymap.set("n", "<leader>ws", builtin.lsp_dynamic_workspace_symbols, { desc = "[W]orkspace [S]ymbols" })
 
 table.insert(vimgrep_arguments, "--hidden")
 table.insert(vimgrep_arguments, "--glob")
@@ -72,9 +81,6 @@ local config = {
 }
 
 telescope.setup(config)
-
-telescope.load_extension "file_browser"
-telescope.load_extension "lazygit"
 
 --[[
 ** Default mappings **
