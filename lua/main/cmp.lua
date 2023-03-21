@@ -164,11 +164,11 @@ local config = {
         end,
     },
     sources = {
-        { name = "nvim_lsp" },
-        { name = "luasnip", option = { use_show_condition = false } },
+        { name = "nvim_lsp", max_item_count = 10 },
+        { name = "luasnip", max_item_count = 5, option = { use_show_condition = false } },
         { name = "nvim_lua", max_item_count = 5 },
         { name = "buffer", max_item_count = 5, keyword_length = 5 },
-        { name = "path" },
+        { name = "path", max_item_count = 5 },
     },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
@@ -176,7 +176,8 @@ local config = {
     },
     window = {
         completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        --documentation = cmp.config.window.bordered(),
+        documentation = false,
     },
     experimental = {
         ghost_text = false,
