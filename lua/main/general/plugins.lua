@@ -62,6 +62,7 @@ return packer.startup(function(use)
     -- file, fuzzy
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', } -- telescope
     use "nvim-telescope/telescope-file-browser.nvim"
+    use "nvim-telescope/telescope-fzf-native.nvim"
     use "kevinhwang91/rnvimr" -- ranger
     use { "nvim-neo-tree/neo-tree.nvim", branch = "v2.x", } -- neotree
     -- code editting
